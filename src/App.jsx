@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { TaskList } from './components/TaskList';
 import './App.css'
 import { TaskForm } from './components/TaskForm';
 
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const [filteredTasks, setFilteredTasks] = useState([]);
+  const [todos, setTodos] = useState([]);
+  const [filteredTodos, setFilteredTodos] = useState([]);
 
 
   return (
@@ -14,14 +14,14 @@ function App() {
 
       <TaskForm />
  
-      {/* <TaskList
-        tasks={filteredTasks}
-        onTitleChange={newTasks.onTitleChange}
-        onStatusChange={newTasks.onStatusChange}
-        onDelete={newTasks.onDelete}
-        onAlphaChange={newTasks.onAlphaChange}
-        onClick={newTasks.onClick}
-      /> */}
+      <TaskList
+        // tasks={filteredTasks}
+        // onTitleChange={newTasks.onTitleChange}
+        // onStatusChange={newTasks.onStatusChange}
+        // onDelete={newTasks.onDelete}
+        // onAlphaChange={newTasks.onAlphaChange}
+        // onClick={newTasks.onClick}
+      />
     </>
   )
 }

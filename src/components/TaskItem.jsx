@@ -1,15 +1,14 @@
 import { useContext, useState } from "react";
 import { TodoContext } from "../Context/TodoContext";
+import { RetrieveSavedTodos } from "../utils/taskUtils";
 
-export function TaskItem({task}) {
-
+export function TaskItem({todo}) {
   
 
     return (
-        <p>hi</p>
-        //  <div key={task.id} className="task-container">
-        //     <div className="title-row">
-        //         <h1>{task.title}</h1>
-        //     </div>
-        // </div>
+         <div key={todo.id} className="todo-container">
+            <div className="title-row">
+                <h1>{todo.title}</h1>
+            </div>
+        </div>
     )}

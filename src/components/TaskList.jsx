@@ -1,17 +1,17 @@
+import { useContext } from "react";
 import { TaskItem } from "./TaskItem";
 import { TodoContext } from "../Context/TodoContext";
 
 export function TaskList() {
-    const {tasks} = useContext(TodoContext);
+    const {todos} = useContext(TodoContext);
 
     return (
         <>   
-            <div className="task-list">
-                {tasks.map((task) => (
+            <div className="todo-list">
+                {todos.map((todo) => (
                     <TaskItem
-                        key={task.id}
-                        task={task}
-                  
+                        key={todo.id}
+                        todo={todo}                  
                     />
                 ))}
             </div>
