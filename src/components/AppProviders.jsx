@@ -52,8 +52,25 @@ export function AppProviders({ children }) {
       // setFilteredTasks(updatedTasks);
     }
 
+    function editTodo(todoId, newTitle) {
+        const updatedTodos = todos.map(todo => {
+        if (todo.id === todoId) {
+          return { ...todo, title: newTitle };
+        }
+        return todo;
+      });
+      let newTodos = [...updatedTodos];
+      try {
+         localStorage.setItem("todoArray", JSON.stringify(newTodos));
+      } catch (error) {
+        console.error("Error setting local storage", error);
+      }     
+      setTodos(updatedTodos);
+      // setFilteredTasks(updatedTasks);
+    }
+
     return (
-        <TodoContext.Provider value={{ todos, addTodo, toggleTodo, deleteTodo }}>
+        <TodoContext.Provider value={{ todos, addTodo, toggleTodo, deleteTodo, editTodo }}>
             {children}
         </TodoContext.Provider>
     )
