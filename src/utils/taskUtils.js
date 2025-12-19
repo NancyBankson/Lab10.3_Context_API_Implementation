@@ -11,7 +11,8 @@ export function RetrieveId() {
     if (retrievedIdArray) { retrievedId = JSON.parse(retrievedIdArray) };
     let nextId = 0;
     if (retrievedId) {
-        nextId = parseInt(retrievedId[0]) + 1;
+        console.log(retrievedId);
+        nextId = retrievedId + 1;
     } else nextId = 1;
     return nextId;
 }
