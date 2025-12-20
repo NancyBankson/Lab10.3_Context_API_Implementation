@@ -4,32 +4,17 @@ import { FilterContext } from "../Context/FilterContext";
 export function FitlerButtons() {
     const { setFilter } = useContext(FilterContext);
 
-    const handleAllFilter = (event) => {
-        const allFilter = event.target.value;
-        setFilter(allFilter);
-    };
-
-    const handleActiveFilter = (event) => {
-        const activeFilter = event.target.value;
-        setFilter(activeFilter);
-    };
-
-    const handleCompletedFilter = (event) => {
-        const completedFilter = event.target.value;
-        setFilter(completedFilter);
+    const handleFilter = (event) => {
+        const filter = event.target.value;
+        setFilter(filter);
     };
 
     return (
         <>
             <label htmlFor="status">Filter:</label>
-            <button value="All" onClick={() => handleAllFilter(event)}>All</button>
-            <button value="Active" onClick={() => handleActiveFilter(event)}>Active</button>
-            <button value="Completed" onClick={() => handleCompletedFilter(event)}>Completed</button>
-            {/* <select id="status-input" name="status" value={filter} onChange={handleFilter}>
-                <option value="Pending">Pending</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Completed">Completed</option>
-            </select> */}
+            <button value="All" onClick={() => handleFilter(event)}>All</button>
+            <button value="Active" onClick={() => handleFilter(event)}>Active</button>
+            <button value="Completed" onClick={() => handleFilter(event)}>Completed</button>
         </>
     )
 }

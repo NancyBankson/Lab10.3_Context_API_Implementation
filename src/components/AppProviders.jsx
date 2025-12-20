@@ -10,7 +10,6 @@ export function AppProviders({ children }) {
   const [id, setId] = useState(RetrieveId);
 
   function addTodo(todoTitle) {
-    console.log(id);
     let todoObj = {
       id: id,
       title: todoTitle,
@@ -72,7 +71,6 @@ export function AppProviders({ children }) {
   }
 
   function clearAll() {
-    console.log("clicked");
     setTodos([]);
     setId(1);
     localStorage.removeItem("todoArray");
@@ -82,13 +80,10 @@ export function AppProviders({ children }) {
   function setFilter(filter) {
     const filterTodos = todos.filter(todo => {
       if (filter === "All") {
-        console.log("all todos")
         return todo;
       } else if ((todo.completed === true) && (filter === "Completed")) {
-        console.log("completed todos")
         return todo;
       } else if ((todo.completed === false) && (filter === "Active")) {
-        console.log("active todos")
         return todo;
       }
     })
