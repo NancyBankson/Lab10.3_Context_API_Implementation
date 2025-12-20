@@ -11,12 +11,15 @@ function App() {
 
 
   return (
-    <>
-
-      <TaskForm />
+    
+    <div id="main-div">
+       <TaskForm />
       <FitlerButtons />
       <TaskList />
-    </>
+    
+    </div>
+
+     
   )
 }
 

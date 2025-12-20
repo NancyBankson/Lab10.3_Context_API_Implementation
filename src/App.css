@@ -23,3 +23,28 @@
 .todo-container h1 {
   font-size: 1.5rem;
 }
+
+body {
+    font-family: "Nunito Sans", sans-serif;
+    background-color: hsl(0, 0%, 99%);
+    color: hsl(200, 15%, 8%);
+}
+
+.dark-mode {
+  background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 100%, 100%);
+}
+
+/* body.dark-mode {
+    background-color: hsl(207, 26%, 17%);
+    color: hsl(0, 100%, 100%);
+}
+
+input.dark-mode {
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 100%, 100%);
+}
+
+input {
+    background-color: hsl(0, 100%, 100%);
+} */

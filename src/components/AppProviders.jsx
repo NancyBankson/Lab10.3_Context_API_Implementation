@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TodoContext } from "../Context/TodoContext";
 import { FilterContext } from "../Context/FilterContext";
 import { RetrieveSavedTodos } from "../utils/taskUtils";
 import { RetrieveId } from "../utils/taskUtils";
+import { ThemeContext } from "../Context/ThemeContext";
 
 export function AppProviders({ children }) {
   const [todos, setTodos] = useState(RetrieveSavedTodos);
   const [filteredTodos, setFilteredTodos] = useState(RetrieveSavedTodos);
   const [id, setId] = useState(RetrieveId);
+  const [theme, setTheme] = useState("Light");
+
+  useEffect(() => {
+      if (theme === "Dark") {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.remove("dark-mode");
+      }
+    }, [theme]);
 
   function addTodo(todoTitle) {
     let todoObj = {
@@ -90,10 +100,16 @@ export function AppProviders({ children }) {
     setFilteredTodos(filterTodos);
   }
 
+  function toggleTheme() {
+    setTheme(prevTheme => (prevTheme === "Light" ? "Dark" : "Light"));   
+  }
+
   return (
     <TodoContext.Provider value={{ todos, addTodo, toggleTodo, deleteTodo, editTodo, clearAll, setFilter }}>
       <FilterContext.Provider value={{ filteredTodos, setFilter }}>
-        {children}
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+          {children}
+        </ThemeContext.Provider>
       </FilterContext.Provider>
     </TodoContext.Provider>
   )
