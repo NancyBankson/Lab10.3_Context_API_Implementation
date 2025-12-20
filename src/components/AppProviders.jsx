@@ -82,10 +82,13 @@ export function AppProviders({ children }) {
   function setFilter(filter) {
     const filterTodos = todos.filter(todo => {
       if (filter === "All") {
+        console.log("all todos")
         return todo;
       } else if ((todo.completed === true) && (filter === "Completed")) {
+        console.log("completed todos")
         return todo;
       } else if ((todo.completed === false) && (filter === "Active")) {
+        console.log("active todos")
         return todo;
       }
     })
@@ -94,7 +97,7 @@ export function AppProviders({ children }) {
 
   return (
     <TodoContext.Provider value={{ todos, addTodo, toggleTodo, deleteTodo, editTodo, clearAll, setFilter }}>
-      <FilterContext.Provider value={{ setFilter }}>
+      <FilterContext.Provider value={{ filteredTodos, setFilter }}>
         {children}
       </FilterContext.Provider>
     </TodoContext.Provider>

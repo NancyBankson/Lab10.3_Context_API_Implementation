@@ -1,3 +1,3 @@
 import { createContext } from 'react';
  
-export const FilterContext = createContext("All");
+export const FilterContext = createContext(null);
