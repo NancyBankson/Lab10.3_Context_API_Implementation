@@ -15,3 +15,10 @@ export function RetrieveId() {
     } else nextId = 1;
     return nextId;
 }
+
+export function RetrieveTheme() {
+    let retrievedTheme = "Light";
+    let retrievedThemeArray = localStorage.getItem("theme");
+    if (retrievedThemeArray) {retrievedTheme = retrievedThemeArray};
+    return retrievedTheme;
+}

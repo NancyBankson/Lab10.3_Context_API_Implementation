@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
-import { TaskList } from './components/TaskList';
+import { TodoInput } from './components/TodoInput';
 import './App.css'
-import { TaskForm } from './components/TaskForm';
+import { TodoList } from './components/TodoList';
 import { FitlerButtons } from './components/FilterButtons';
 
 
@@ -13,9 +13,9 @@ function App() {
   return (
     
     <div id="main-div">
-       <TaskForm />
+       <TodoInput />
       <FitlerButtons />
-      <TaskList />
+      <TodoList />
     
     </div>
 

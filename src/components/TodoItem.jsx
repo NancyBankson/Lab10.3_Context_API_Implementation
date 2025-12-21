@@ -1,9 +1,8 @@
 import { useContext, useState } from "react";
 import { TodoContext } from "../Context/TodoContext";
-import { RetrieveSavedTodos } from "../utils/taskUtils";
 import { ThemeContext } from "../Context/ThemeContext";
 
-export function TaskItem({ todo }) {
+export function TodoItem({ todo }) {
     const { toggleTodo, deleteTodo, editTodo } = useContext(TodoContext);
     const [isVisible, setIsVisible] = useState(true);
     const { theme } = useContext(ThemeContext);

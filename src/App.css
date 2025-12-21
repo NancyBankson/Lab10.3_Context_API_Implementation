@@ -35,16 +35,14 @@ body {
     color: hsl(0, 100%, 100%);
 }
 
-/* body.dark-mode {
-    background-color: hsl(207, 26%, 17%);
-    color: hsl(0, 100%, 100%);
+button {
+  border: 1px solid darkgray;
+  margin: 0 5px;
 }
 
-input.dark-mode {
-    background-color: hsl(209, 23%, 22%);
-    color: hsl(0, 100%, 100%);
+button.dark-mode {
+  border: 1px solid hsl(0, 0%, 99%);
 }
-
-input {
-    background-color: hsl(0, 100%, 100%);
-} */
+.todo-container {
+  padding: 5px 0;
+}

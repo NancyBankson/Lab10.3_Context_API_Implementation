@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { TaskItem } from "./TaskItem";
 import { TodoContext } from "../Context/TodoContext";
 import { FilterContext } from "../Context/FilterContext";
+import { TodoItem } from "./TodoItem";
 
-export function TaskList() {
+export function TodoList() {
     const {todos} = useContext(TodoContext);
     const { filteredTodos } = useContext(FilterContext);
 
@@ -11,7 +11,7 @@ export function TaskList() {
         <>   
             <div className="todo-list">
                 {filteredTodos.map((filteredTodo) => (
-                    <TaskItem
+                    <TodoItem
                         key={filteredTodo.id}
                         todo={filteredTodo}                  
                     />

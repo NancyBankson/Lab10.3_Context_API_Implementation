@@ -4,18 +4,21 @@ import { FilterContext } from "../Context/FilterContext";
 import { RetrieveSavedTodos } from "../utils/taskUtils";
 import { RetrieveId } from "../utils/taskUtils";
 import { ThemeContext } from "../Context/ThemeContext";
+import { RetrieveTheme } from "../utils/taskUtils";
 
 export function AppProviders({ children }) {
   const [todos, setTodos] = useState(RetrieveSavedTodos);
   const [filteredTodos, setFilteredTodos] = useState(RetrieveSavedTodos);
   const [id, setId] = useState(RetrieveId);
-  const [theme, setTheme] = useState("Light");
+  const [theme, setTheme] = useState(RetrieveTheme);
 
   useEffect(() => {
       if (theme === "Dark") {
         document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "Dark");
       } else {
         document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "Light");
       }
     }, [theme]);
 
