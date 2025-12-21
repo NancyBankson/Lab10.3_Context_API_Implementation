@@ -28,7 +28,7 @@ export function TodoItem({ todo }) {
                 <button className={(theme === "Dark") ? 'dark-mode' : null} onClick={() => toggleTodo(todo.id)}>{(todo.completed) ? "Completed" : "Active"}</button>
                 <button className={(theme === "Dark") ? 'dark-mode' : null} onClick={() => deleteTodo(todo.id)}>Delete</button>
                 <button className={(theme === "Dark") ? 'dark-mode' : null} onClick={() => handleClick(todo.id)}>Edit</button>
-                {!isVisible && (<button onClick={handleSave}>Save</button>)}
+                {!isVisible && (<button className={(theme === "Dark") ? 'dark-mode' : null} onClick={handleSave}>Save</button>)}
             </div>
         </div>
     )
